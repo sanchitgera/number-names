@@ -1,5 +1,6 @@
 var cache = require('./lib/cache');
 var lots = require('./lib/lots');
+var bigNumber = require('big-integer');
 
 Array.prototype.chunk = function(chunkSize) {
   var array = this;
@@ -11,8 +12,7 @@ Array.prototype.chunk = function(chunkSize) {
 }
 
 var n2w = function(num) {
-  var number = parseInt(num.toString(), 10);
-  console.log(number);
+  number = bigNumber(num, 10);
   var o = '';
 
   if (number < 0) {
@@ -27,21 +27,21 @@ var n2w = function(num) {
     var i = 0;
     var f = false;
 
-    while (number !== 0) {
-      r = number % 1000;
-      console.log(r);
-      number = Math.floor(number / 1000);
-      console.log(number);
+    while (!number.equals(0)) {
 
-      if (!(r === 0 || i === 0)) {
+      divmod = number.divmod(1000);
+      number = divmod.quotient;
+      r = divmod.remainder;
+      
+      if (!(r.equals(0) || i === 0)) {
         sets.push(lots[i] + (!(sets.length > 0) ? (f ? ' and' : ',') : ''));
       }
 
-      if (i === 0 && r < 100) {
+      if (i === 0 && r.lt(100)) {
         f = true;
       }
 
-      if (r !== 0) {
+      if (!r.equals(0)) {
         sets.push(cache[r]);
       }
       i = i + 1;

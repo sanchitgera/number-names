@@ -13,5 +13,8 @@
     "integers"
   ],
   "author": "Sanchit Gera",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "big-integer": "^1.6.2"
+  }
 }
