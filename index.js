@@ -6,12 +6,12 @@ var n2w = function(num) {
   number = bigNumber(num, 10);
   var o = '';
 
-  if (number < 0) {
-    o += 'negative';
-    number = Math.abs(number);
+  if (number.isNegative()) {
+    o += 'negative ';
+    number = number.abs();
   }
 
-  if (number === 0) {
+  if (number.isZero()) {
     o += 'zero';
   } else {
     var sets = [];
@@ -25,7 +25,7 @@ var n2w = function(num) {
       r = divmod.remainder;
 
       if (!(r.equals(0) || i === 0)) {
-        sets.push(lots[i] + (!(sets.length > 0) ? (f ? ' and' : ',') : ''));
+        sets.push(lots[i] + (!(sets.length === 0) ? (f ? ' and' : ',') : ''));
       }
 
       if (i === 0 && r.lt(100)) {

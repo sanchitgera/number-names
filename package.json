@@ -15,6 +15,7 @@
   "author": "Sanchit Gera",
   "license": "MIT",
   "dependencies": {
-    "big-integer": "^1.6.2"
+    "big-integer": "^1.6.2",
+    "bignumber.js": "^2.0.8"
   }
 }
