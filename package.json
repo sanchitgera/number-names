@@ -1,0 +1,17 @@
+{
+  "name": "number-names",
+  "version": "1.0.0",
+  "description": "Convert numbers to words ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "number-names",
+    "humanize",
+    "words",
+    "integers"
+  ],
+  "author": "Sanchit Gera",
+  "license": "MIT"
+}
