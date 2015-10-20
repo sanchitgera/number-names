@@ -1,17 +1,20 @@
 var cache = require('./lib/cache');
 var lots = require('./lib/lots');
-var bigNumber = require('big-integer');
+var bigNumber = require('bignumber.js');
 
 var n2w = function(num) {
-  number = bigNumber(num, 10);
+  var number = new bigNumber(num);
+
+  var temp = number;
+  number = number.trunc();
   var o = '';
 
-  if (number.isNegative()) {
+  if (number.lt(0)) {
     o += 'negative ';
-    number = number.abs();
+    number = number.times(-1);
   }
 
-  if (number.isZero()) {
+  if (number.equals(0)) {
     o += 'zero';
   } else {
     var sets = [];
@@ -20,9 +23,8 @@ var n2w = function(num) {
 
     while (!number.equals(0)) {
 
-      divmod = number.divmod(1000);
-      number = divmod.quotient;
-      r = divmod.remainder;
+      r = number.mod(1000);
+      number = number.dividedBy(1000).floor();
 
       if (!(r.equals(0) || i === 0)) {
         sets.push(lots[i] + (!(sets.length === 0) ? (f ? ' and' : ',') : ''));
@@ -40,6 +42,15 @@ var n2w = function(num) {
     o += sets.reverse().join(' ');
   }
 
+  var decimal = temp.mod(1).toString();
+  if(decimal !== '0') {
+    decimal = decimal.split('.')[1];
+    o += ' point'
+    // The number has a decimal portion
+    decimal.split('').forEach(function(digit) {
+      o += ' ' + cache[digit];
+    });
+  }
   return o;
 }
 
