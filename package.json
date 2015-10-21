@@ -15,7 +15,10 @@
   "author": "Sanchit Gera",
   "license": "MIT",
   "dependencies": {
+    "benchmark": "^1.0.0",
     "big-integer": "^1.6.2",
-    "bignumber.js": "^2.0.8"
+    "bignumber.js": "^2.0.8",
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
   }
 }
