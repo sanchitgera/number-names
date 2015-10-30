@@ -92,7 +92,9 @@ BASE_TESTS = [
 FLOAT_TESTS = [
   [0.43, 'zero point four three'],
   ['12.9083', 'twelve point nine zero eight three'],
-  [99.99999, 'ninety-nine point nine nine nine nine nine']
+  [99.99999, 'ninety-nine point nine nine nine nine nine'],
+  [-1.90000, 'negative one point nine'],
+  ['-1.90000', 'negative one point nine']
 ];
 
 module.exports = {
