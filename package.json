@@ -1,6 +1,6 @@
 {
   "name": "number-names",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert numbers to words ",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "words",
     "integers"
   ],
+  "homepage" : "github.com/sanchitgera/number-names",
   "author": "Sanchit Gera",
   "license": "MIT",
   "dependencies": {
