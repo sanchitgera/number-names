@@ -18,10 +18,6 @@ describe('number-names spec', function() {
       .to.not.throw(Error);
   });
 
-  it('can turn off errors', function() {
-
-  });
-
   it('matches numbers under 15 significant digits', function() {
     cases.forEach(function(tcase) {
       expect(n2w(tcase[0].toString())).to.eq(tcase[1]);
