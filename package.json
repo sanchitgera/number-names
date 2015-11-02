@@ -12,14 +12,24 @@
     "words",
     "integers"
   ],
-  "homepage" : "github.com/sanchitgera/number-names",
+  "homepage": "http://github.com/sanchitgera/number-names",
   "author": "Sanchit Gera",
   "license": "MIT",
   "dependencies": {
-    "benchmark": "^1.0.0",
-    "big-integer": "^1.6.2",
     "bignumber.js": "^2.0.8",
-    "chai": "^3.3.0",
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
     "mocha": "^2.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanchitgera/number-names.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sanchitgera/number-names/issues"
   }
 }
